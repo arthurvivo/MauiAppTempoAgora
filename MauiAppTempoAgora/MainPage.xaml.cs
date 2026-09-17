@@ -46,6 +46,11 @@ namespace MauiAppTempoAgora
                 }
 
             }
+            catch (HttpRequestException)
+            {
+                await DisplayAlert("Erro", "Sem conexão com a internet.", "OK");
+            }
+
             catch (Exception ex)
             {
                 await DisplayAlert("Erro", ex.Message, "OK");
